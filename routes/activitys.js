@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+let router = require("express").Router()
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+let {create, made, read, deletee, update, noMade} = require("../controllers/activity")
+
+router.post("/",create)
+router.patch("/:id",made)
+router.get("/",read)
+router.delete("/:id",deletee)
+router.put("/:id",noMade)
+router.patch("/update/:id",update)
+
+
 
 module.exports = router;

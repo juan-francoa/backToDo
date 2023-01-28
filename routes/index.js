@@ -1,5 +1,4 @@
-let express = require('express');
-let router = express.Router();
+let router = require("express").Router()
 
 let activity = require("./activitys")
 
