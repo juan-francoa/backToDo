@@ -7,7 +7,7 @@ const controller = {
         try{
             let neww = await Activity.create(obj)
             res.status(201).json({
-                id: neww._id,
+                id: neww,
                 success: true,
                 message: "la actividad se creo"
             })
@@ -23,7 +23,7 @@ const controller = {
         try{
             let neww = await Activity.findOneAndUpdate({_id:id},{made:true}, {new:true})
                 res.status(201).json({
-                id: neww._id,
+                id: neww,
                 success: true,
                 message: "la actividad se realizo"
             })
@@ -54,7 +54,7 @@ const controller = {
         try{
             let neww = await Activity.findOneAndDelete({_id:id})
                 res.status(201).json({
-                activitys: neww._id,
+                activitys: neww,
                 success: true,
                 message: "actividad eliminada"
             })
@@ -70,7 +70,7 @@ const controller = {
         try{
             let neww = await Activity.findOneAndUpdate({_id:id},{made:false}, {new:true})
                 res.status(201).json({
-                id: neww._id,
+                id: neww,
                 success: true,
                 message: "la actividad no se realizo"
             })
@@ -86,7 +86,7 @@ const controller = {
         try{
             let neww = await Activity.findOneAndUpdate({_id:id},req.body, {new:true})
                 res.status(201).json({
-                id: neww._id,
+                id: neww,
                 success: true,
                 message: "la actividad se modifico"
             })
